@@ -1,0 +1,6 @@
+{
+  "name": "Unified CCTV Integration & Analytics Platform",
+  "description": "Statewide CCTV Registry, Unified Multi-Stream Video Wall, AI ANPR Detection, Watchlist Alerting, GIS Vehicle Journey Tracking, and Coverage Gap Analysis.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
