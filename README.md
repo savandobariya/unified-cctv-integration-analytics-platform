@@ -1,38 +1,42 @@
-===========================================================
-PROJECT: Unified CCTV Integration & Analytics Platform
-=========================================================== 
+<div align="center">
 
---- OVERVIEW ---
-Statewide CCTV registry & command-center platform: unified multi-
-stream video wall (HLS), AI-based ANPR (Automatic Number Plate
-Recognition) analytics, watchlist alerting, GIS-based vehicle
-journey tracking, camera onboarding, coverage-gap analysis, audit
-logs, and a login/security-shield module.
+# 📹 Unified CCTV Integration & Analytics Platform
 
---- ⚠️ IMPORTANT (READ BEFORE UPLOADING) ---
-Aa project ma PHP BILKUL NATHI — no /php or /php-backend folder
-exists at all. Backend fully Node.js + Express (server.ts) che, JWT
-+ bcrypt thi authentication, cors + helmet security. Database pan
-real nathi — src/server/mockDb.ts ma mock/in-memory data che. Jo
-tara GitHub repo set ma "badhe PHP" jota hoy to aa ek exception che
-— tu chahe to ene alag mention kari deje ke "backend: Node.js" instead
-of PHP, athva tu mane kahe to hu aana mate ek PHP+MySQL backend pan
-banavi aapi shaku.
+Statewide CCTV registry & command-center platform — unified multi-stream video wall (HLS), AI-based ANPR (Automatic Number Plate Recognition) analytics, watchlist alerting, GIS-based vehicle journey tracking, camera onboarding, coverage-gap analysis, and audit logs.
 
---- TECH STACK (actual, as-is) ---
-Frontend        : React 19 + TypeScript + Vite 6
-Styling         : Tailwind CSS 4
-Maps            : Leaflet (GIS vehicle tracking)
-Charts          : Recharts (analytics/dashboards)
-Video           : hls.js (multi-camera live video wall)
-Backend         : Node.js + Express (server.ts via `tsx`)
-Auth/Security   : JWT (jsonwebtoken) + bcryptjs + helmet + cors
-AI              : Google Gemini API (@google/genai) — ANPR/analytics
-                  assist features
-Data (current)  : Mock/in-memory DB — src/server/mockDb.ts
-                  (NO real database connected)
+</div>
 
---- FOLDER STRUCTURE ---
+---
+
+## ⚠️ Important Note
+
+This project was generated in **Google AI Studio**. **There is no PHP anywhere in this project** — no `/php` or `/php-backend` folder exists at all. The backend is fully **Node.js + Express** (`server.ts`), with JWT + bcrypt authentication and cors + helmet security.
+
+There's also no live database — `src/server/mockDb.ts` holds mock/in-memory data.
+
+If your repo collection is meant to be "all PHP," this one's the exception — either label it clearly as Node.js-based, or ask if you'd like a PHP+MySQL backend built for it.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 19 + TypeScript + Vite 6 |
+| Styling | Tailwind CSS 4 |
+| Maps | Leaflet (GIS vehicle tracking) |
+| Charts | Recharts (analytics/dashboards) |
+| Video | hls.js (multi-camera live video wall) |
+| Backend | Node.js + Express (`server.ts` via `tsx`) |
+| Auth / Security | JWT (`jsonwebtoken`) + `bcryptjs` + `helmet` + `cors` |
+| AI | Google Gemini API (`@google/genai`) — ANPR/analytics assist |
+| Data | Mock/in-memory DB — `src/server/mockDb.ts` (no live database) |
+
+---
+
+## 📁 Folder Structure
+
+```
 unified-cctv-platform/
 ├── index.html
 ├── package.json
@@ -70,42 +74,58 @@ unified-cctv-platform/
             ├── BottomTicker.tsx / LiveAlertsPanel.tsx
             ├── AddVideoModal.tsx / VideoManagerModal.tsx
             └── CCTVCanvasScene.ts
+```
 
---- ENV VARIABLES (.env) ---
-GEMINI_API_KEY  = your Google Gemini API key
-APP_URL         = app's hosted URL
-JWT_SECRET      = secret key for signing JWT tokens
-SESSION_SECRET  = secret key for session/HMAC
+---
 
---- SETUP / RUN LOCALLY ---
-1. npm install
-2. Copy .env.example -> .env and fill GEMINI_API_KEY, JWT_SECRET,
-   SESSION_SECRET
-3. npm run dev          (starts tsx server.ts)
-4. Build for prod: npm run build
-5. Start prod build: npm start
+## 🔑 Environment Variables
 
---- IF YOU WANT A REAL PHP + MYSQL BACKEND ---
-This one needs a full backend rebuild since nothing PHP exists yet:
-  1. Design MySQL schema: cameras, users, vehicles/anpr_logs,
-     watchlist, alerts, audit_logs tables
-  2. Recreate server.ts's Express routes as PHP endpoints (use
-     password_hash/password_verify instead of bcryptjs, and PHP
-     JWT library or PHP sessions instead of jsonwebtoken)
-  3. Point frontend fetch calls to the new PHP API base URL
-(Let me know if you want this PHP+MySQL version built out.)
+```env
+GEMINI_API_KEY=your_google_gemini_api_key
+APP_URL=http://localhost:3000
+JWT_SECRET=your_jwt_signing_secret
+SESSION_SECRET=your_session_hmac_secret
+```
 
---- SUGGESTED GITHUB REPO NAME ---
-unified-cctv-integration-analytics-platform
+---
 
---- SUGGESTED SHORT DESCRIPTION (repo tagline) ---
-Statewide CCTV command-center platform — unified video wall, AI ANPR
-detection, watchlist alerts, GIS vehicle tracking & coverage-gap
-analysis (React + Node.js/Express).
+## 🚀 Setup / Run Locally
 
---- SUGGESTED TOPICS/TAGS ---
-react, typescript, vite, tailwindcss, nodejs, express, jwt-auth,
-leaflet, gemini-api, cctv, anpr, surveillance, gis
+```bash
+# 1. Install dependencies
+npm install
 
---- .gitignore NOTE ---
-node_modules, dist, .env already ignored — good to push as is.
+# 2. Copy env file and fill in GEMINI_API_KEY, JWT_SECRET, SESSION_SECRET
+cp .env.example .env
+
+# 3. Start dev server
+npm run dev
+
+# 4. Build for production
+npm run build
+
+# 5. Start production build
+npm start
+```
+
+---
+
+## 🔄 Building a Real PHP + MySQL Backend
+
+This one needs a full backend build since nothing PHP exists yet:
+
+1. Design a MySQL schema: `cameras`, `users`, `vehicles`/`anpr_logs`, `watchlist`, `alerts`, `audit_logs` tables
+2. Recreate `server.ts`'s Express routes as PHP endpoints (use `password_hash`/`password_verify` instead of bcryptjs, and a PHP JWT library or PHP sessions instead of `jsonwebtoken`)
+3. Point frontend fetch calls to the new PHP API base URL
+
+*(Ask if you'd like this PHP+MySQL version built out.)*
+
+---
+
+## 🏷️ Suggested Repo Metadata
+
+**Description:**
+> Statewide CCTV command-center platform — unified video wall, AI ANPR detection, watchlist alerts, GIS vehicle tracking & coverage-gap analysis (React + Node.js/Express).
+
+**Topics:**
+`react` `typescript` `vite` `tailwindcss` `nodejs` `express` `jwt-auth` `leaflet` `gemini-api` `cctv` `anpr` `surveillance` `gis`
